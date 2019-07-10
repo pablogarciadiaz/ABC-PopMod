@@ -13,6 +13,8 @@ pop.trends<-read.csv("d:/CONTAIN/Mink Border Example/Emulator/Data Exporting/Sim
 
 summary(pop.trends)
 
+pop.trends$Year<-(pop.trends$Year-min(pop.trends$Year))+1 ### For whenever the first year in the simulations is not = 1
+
 ### Sort the data by cell id and year
 pop.trends<-pop.trends[order(pop.trends$id.cell, pop.trends$Year),] 
 
