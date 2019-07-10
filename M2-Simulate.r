@@ -50,7 +50,7 @@ mink.m2<-function(x){
 
         #### Recruitment
         #### Litter size per female
-        mean.litter<-x[3]
+        f<-x[3]
 
         ########## Probabilities of immigration
         pd.ad<-x[4]      ##### Adult probabiliy of dispersal
@@ -94,9 +94,6 @@ mink.m2<-function(x){
                 immi.juv<-rbinom(1, size=sum(juv.est[-i, j-1]), prob=pd.juv*mean(norm.k[i, -i]))       #### Mean total juveniles dispersing in the landscape that will arrive in cell i
 
                 tot.immi<-immi.ad+immi.juv                                                ##### Total immigration into cell i
-
-                ### Mean litter size
-                f<-rpois(1, mean.litter)
 
                 ##### Population sizes
                 #### Apparent survival adults
