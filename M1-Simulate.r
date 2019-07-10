@@ -21,7 +21,7 @@ pop.trends<-pop.trends[order(pop.trends$id.cell, pop.trends$Year),]
 #### TRANSFORM INTO MATRIX
 juv<-matrix(pop.trends$NJuvs, ncol=max(pop.trends$Year), nrow=max(pop.trends$id.cell), byrow=TRUE)      #### Number of juveniles per year (columns) and cell (rows)
 
-ad<-matrix(pop.trends$NInd, ncol=max(pop.trends$Year), nrow=max(pop.trends$id.cell), byrow=TRUE)        #### Number of adults per year (columns) and cell (rows)
+ad<-matrix(pop.trends$NInd_stage1, ncol=max(pop.trends$Year), nrow=max(pop.trends$id.cell), byrow=TRUE)        #### Number of adults per year (columns) and cell (rows)
 
 ##### Occasions and others
 n.occ<-max(pop.trends$Year)         ### Number of years
