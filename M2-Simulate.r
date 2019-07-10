@@ -11,6 +11,8 @@ library(abc)
 ##### POPULATION TRENDS AND RECRUIRMENT
 pop.trends<-read.csv("d:/CONTAIN/Mink Border Example/Emulator/Data Exporting/Sim0-PopTrends.csv", header=TRUE, sep=",")
 
+pop.trends$Year<-(pop.trends$Year-min(pop.trends$Year))+1       ### For whenever the first year in the simulations is not = 1
+
 summary(pop.trends)
 
 ### Sort the data by cell id and year
