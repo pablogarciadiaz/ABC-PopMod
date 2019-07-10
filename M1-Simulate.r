@@ -116,6 +116,12 @@ pred.vector<-matrix(0, nrow= n.occ*4*2, ncol=n.its)
 
 prior.vector<-matrix(0, nrow=7, ncol=n.its)
 
+								      
+#### Timing the function
+start.time<-Sys.time()
+
+### Run the simulations
+								      
 for (i in 1:n.its){
      
     prior.vector[, i]<-c(runif(1, 0.5, 1), runif(1, 0.5, 1),
@@ -129,6 +135,11 @@ for (i in 1:n.its){
 
 close(pb)
 
+end.time<-Sys.time()
+
+time.taken<-end.time-start.time
+
+time.taken
 
 #### Identifying combinations of prior values that produced NAs in the summary statistics
 
